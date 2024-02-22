@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book lovers 💞</title>
+    <style>
+        body {
+            background: linear-gradient(white, #0084AF);
+            color: #36454F;
+        }
+
+        h1,
+        h2 {
+            text-align: center;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        h1 {
+            font-size: 60px;
+            margin-bottom: 20px;
+            margin-top: 20px;
+            color: #D9042B;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            border-width: 1px;
+        }
+
+        h2 {
+            font-size: 30px;
+        }
+
+        img {
+            width: 100%;
+            margin: 0 auto;
+            display: block;
+            border-radius: 5px;
+            margin-top: 50px;
+            margin-bottom: 50px;
+        }
+
+        button {
+            padding: 20px;
+            display: block;
+            margin: 0 auto;
+            text-decoration: none;
+            font-size: 16px;
+            border-radius: 30px;
+            color: #fff;
+            transition: all 150ms ease-in-out;
+            background-color: #F26444;
+            border: 1px solid #F26444;
+            box-shadow: 5px 4px 7px 0px rgba(0, 0, 0, .4);
+            margin-top: 50px;
+            margin-bottom: 50px;
+        }
+
+        p {
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.8;
+            text-align: justify;
+        }
+
+        a {
+            color: #0084AF;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        button:hover {
+            color: #F26444;
+            background: transparent;
+            cursor: pointer;
+        }
+
+        .content {
+            margin: 0 auto;
+            max-width: 1000px;
+            padding: 20px 100px;
+            width: 50%;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 5px 5px 10px 7px rgba(0, 0, 0, .2);
+        }
+
+        .footer {
+            font-family: 'Courier New', Courier, monospace;
+            text-align: center;
+            color: #60717c;
+        }
+
+        .contact {
+            font-weight: bolder;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="content">
+        <h1><em>Book lovers</em></h1>
+        <hr />
+        <h2>Why is reading so important?</h2>
+        <hr />
+        <img src="https://cdn.gobankingrates.com/wp-content/uploads/2019/08/reading-book-iStock-1005735718.jpg?webp=1&w=675&quality=75"
+            alt="Book in the cozy room" />
+        <p>The digital era has changed the way we read. According to a study from the
+            Pew Research Center, the average American is reading fewer books than they were
+            forty years ago, with <strong>only 31% of the population reading at least
+                one book a year.</strong> This is a 10% decline in overall reading habits.
+            So, why are people reading less?</p>
+
+        <p> It may seem simplistic to say technology, but the availability of social media,
+            streaming apps, and access to the Internet has provided a welcome distraction to
+            many people who are overworked and overwhelmed. And there are plenty of digital
+            resources for anyone to access news, stories, and other reading material that
+            condense the content into bite-sized pieces. <strong>Studies show that the average reading
+                time online is approximately 55 seconds,</strong> which isn`t nearly long enough to see the
+            amazing brain benefits reading can provide.
+            <a href="https://kwikbrain.medium.com/10-brain-reasons-to-make-reading-a-habit-aa628d4b498c"
+                target="_blank">
+                Read more</a>
+        </p>
+
+        <button>Join Book Club now</button>
+        <hr />
+
+        <div class="footer">Coded by <span class="contact">Katarzyna Smelcerz</span> <br />
+            <a href="https://www.instagram.com/kashia_sm/" target="_blank">Instagram </a>
+        </div>
+    </div>
+
+
+
+    <script>
+        function ifInString(word, character) {
+
+            if (word.includes(character)) {
+                return true;
+            }
+            else
+                return false;
+        }
+
+
+        function firstLetterCapitalizer(word) {
+
+            word = word.toLowerCase();
+            const firstLetter = word.charAt(0);
+            const firstLetterCap = firstLetter.toUpperCase();
+            const remainingLetters = word.slice(1);
+            word = firstLetterCap + remainingLetters;
+
+            return word;
+        }
+
+
+        function join() {
+            let name = prompt("Your name: ");
+            let mail = prompt("You email address: ");
+
+            name = firstLetterCapitalizer(name);
+
+            if (ifInString(mail, '@') && ifInString(mail, '.')) {
+                alert(`Welcome to the book club, ${name}!`);
+            }
+            else {
+                alert(`Provided e-mail address is not correct,
+                please try again.`);
+            }
+        }
+
+        let bookClubButton = document.querySelector("button");
+        bookClubButton.addEventListener("click", join);
+    </script>
+</body>
+
+</html>
